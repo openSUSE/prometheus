@@ -12,12 +12,12 @@ build:
           path: ./cmd/promtool
     tags:
         all:
-            - netgo
             - builtinassets
             - stringlabels
         windows:
             - builtinassets
             - stringlabels
+    flags: -mod=vendor -a
     ldflags: |
         -X github.com/prometheus/common/version.Version={{.Version}}
         -X github.com/prometheus/common/version.Revision={{.Revision}}
